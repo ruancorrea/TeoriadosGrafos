@@ -10,20 +10,20 @@ void prim(vector<Edge> *edges, int n, int origem){
     vector<int> d(n, INFINITO);
 	vector<int> p(n, -1);
 	vector<bool> v(n, false);
-    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;
-    pq.push(make_pair(0,origem));
+    priority_queue<Edge, vector<Edge>, greater<Edge>> H;
+    H.push(make_pair(0,origem));
     d[origem] = 0;
-    while(!pq.empty())
+    while(!H.empty())
 	{
-		int w =  pq.top().second;
-		pq.pop();
+		int w =  H.top().second;
+		H.pop();
 		v[w] = true;
 		for(auto item: edges[w])
 		{
 			if(!v[item.first] && d[item.first] > item.second)
 			{
 				d[item.first] = item.second;
-				pq.push(make_pair(d[item.first], item.first));
+				H.push(make_pair(d[item.first], item.first));
 				p[item.first] = w;
 			}
 		}

@@ -6,17 +6,16 @@ using namespace std;
 typedef pair<int, int> Edge;
 
 void dijkstra(vector<Edge> *edges, int n, int origem){
-    vector<int> d(n, INFINITO);
-	vector<int> p(n, -1);
+    vector<int> d(n, INFINITO), p(n, -1);
     int custo = 0;
 	vector<bool> v(n, false);
-    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;
-    pq.push(make_pair(0,origem));
+    priority_queue<Edge, vector<Edge>, greater<Edge>> H;
+    H.push(make_pair(0,origem));
     d[origem] = 0;
-    while(!pq.empty())
+    while(!H.empty())
 	{
-		int w =  pq.top().second;
-		pq.pop();
+		int w =  H.top().second;
+		H.pop();
 		v[w] = true;
 		for(auto item: edges[w])
 		{
@@ -24,7 +23,7 @@ void dijkstra(vector<Edge> *edges, int n, int origem){
 			{
                 custo = d[w] + item.second;
 				d[item.first] = d[w] + item.second;
-				pq.push(make_pair(d[item.first], item.first));
+				H.push(make_pair(d[item.first], item.first));
 				p[item.first] = w;
 			}
 		}
@@ -34,12 +33,13 @@ void dijkstra(vector<Edge> *edges, int n, int origem){
     cout << "\nMenor caminho encontrado" << endl;
     for(int i=n-1;i!=origem;i=p[i]) cout << i << " <- ";
     cout << origem << "\nCom custo: " << custo << endl;
+    free(edges);
 }
 
 int main()
 {
     ifstream arquivo;
-    arquivo.open("grafo.dji"); // leitura do arquivo info.gph |V| e |E|: v,u,d
+    arquivo.open("grafo.dji"); // leitura do arquivo info.dji |V| e |E|: v,u,d
     int n, m, i=0, a,b,c;
     arquivo >> n >> m;
     vector<Edge> edges[m];
