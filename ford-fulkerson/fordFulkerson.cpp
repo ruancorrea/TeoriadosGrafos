@@ -64,7 +64,7 @@ int main(){
         grafo[infoGraph[0]][infoGraph[1]] = infoGraph[2];
     }
     cout << "Utilizando o algoritmo de Ford Fulkerson\n";
-    fordFulkerson(grafo,n, 0, n - 1);
+    fordFulkerson(grafo,n, 0, n - 1); // origem 0
     for(int i=0;i<n;i++) free(grafo[i]);
     free(grafo);
     return 0;

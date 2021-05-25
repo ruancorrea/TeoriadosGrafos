@@ -8,6 +8,7 @@ typedef pair<int, int> Edge;
 void dijkstra(vector<Edge> *edges, int n, int origem){
     vector<int> d(n, INFINITO);
 	vector<int> p(n, -1);
+    int custo = 0;
 	vector<bool> v(n, false);
     priority_queue<Edge, vector<Edge>, greater<Edge>> pq;
     pq.push(make_pair(0,origem));
@@ -21,6 +22,7 @@ void dijkstra(vector<Edge> *edges, int n, int origem){
 		{
 			if(!v[item.first] && d[item.first] > d[w] + item.second)
 			{
+                custo = d[w] + item.second;
 				d[item.first] = d[w] + item.second;
 				pq.push(make_pair(d[item.first], item.first));
 				p[item.first] = w;
@@ -29,6 +31,9 @@ void dijkstra(vector<Edge> *edges, int n, int origem){
 	}
     cout << "Árvore gerada a partir da origem " << origem << "\n";
     for(int i=1;i<n;i++) cout << p[i] << " -> " << i << "\n";
+    cout << "\nMenor caminho encontrado" << endl;
+    for(int i=n-1;i!=origem;i=p[i]) cout << i << " <- ";
+    cout << origem << "\nCom custo: " << custo << endl;
 }
 
 int main()
