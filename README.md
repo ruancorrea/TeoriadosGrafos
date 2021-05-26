@@ -33,17 +33,7 @@
         </tr>
     </table>
     </br>
-    
-<div align="justify">
-	<h2>Compilação </h2>
-</div>
 
-
-Para compilar cada algoritmo, acesse sua determinada pasta e insira:
-
-```
-make all
-```
 
 <div align="justify">
 	<h2>Arquivo de entrada do grafo </h2>
@@ -57,6 +47,18 @@ u v p             // Aresta u -> v, com peso p
 [...]
 .                 // Aresta m
 
+```
+
+    
+<div align="justify">
+	<h2>Compilação </h2>
+</div>
+
+
+Para compilar cada algoritmo, acesse sua determinada pasta e insira:
+
+```
+make all
 ```
 
 <div>
