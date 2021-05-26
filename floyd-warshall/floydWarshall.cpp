@@ -7,7 +7,6 @@ using namespace std;
 #define NIL -1000
 
 void floydWarshall(int **grafo, int **pi, int tam){
-    // falta add pi
     for (int k = 0; k < tam; k++) {
         for (int i = 0; i < tam; i++) {
             for (int j = 0; j < tam; j++) {
