@@ -34,6 +34,11 @@
     </table>
     </br>
     
+<div align="justify">
+	<h2>Compilação </h2>
+</div>
+
+
 Para compilar cada algoritmo, acesse sua determinada pasta e insira:
 
 ```
