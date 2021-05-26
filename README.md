@@ -52,7 +52,7 @@ make all
 O arquivo de entrada contendo as informações de um grafo está organizado da seguinte forma:
 
 ```
-n m
+n m               // n vertices, m arestas
 u v p             // Aresta u -> v, com peso p
 [...]
 .                 // Aresta m
