@@ -41,7 +41,7 @@ make all
 ```
 
 <div align="justify">
-	<h3> Arquivo de entrada do grafo: </h3>
+	<h2>Arquivo de entrada do grafo </h2>
 </div>
 
 O arquivo de entrada contendo as informações de um grafo está organizado da seguinte forma:
@@ -62,7 +62,7 @@ u v p             // Aresta u -> v, com peso p
 
 
 <div align="justify">
-	<h3> Execução </h3>
+	<h2>Execução </h2>
 </div>
 
 Após a compilação de cada algoritmo, é gerado o arquivo executável do determinado algoritmo, para executar insira no determinado diretório do algoritmo:
