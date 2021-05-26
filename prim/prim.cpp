@@ -13,6 +13,7 @@ void prim(vector<Edge> *edges, int n, int origem){
     priority_queue<Edge, vector<Edge>, greater<Edge>> H;
     H.push(make_pair(0,origem));
     d[origem] = 0;
+    int custo = 0;
     while(!H.empty())
 	{
 		int w =  H.top().second;
@@ -21,7 +22,8 @@ void prim(vector<Edge> *edges, int n, int origem){
 		for(auto item: edges[w])
 		{
 			if(!v[item.first] && d[item.first] > item.second)
-			{
+			{   
+                //custo += item.second;
 				d[item.first] = item.second;
 				H.push(make_pair(d[item.first], item.first));
 				p[item.first] = w;
@@ -29,7 +31,12 @@ void prim(vector<Edge> *edges, int n, int origem){
 		}
 	}
     cout << "Árvore gerada a partir da origem " << origem << "\n";
-    for(int i=1;i<n;i++) cout << p[i] << " -> " << i << "\n";
+    for(int i=1;i<n;i++){
+        cout << p[i] << " -> " << i << "\n";
+        for(int j=origem;j<n;j++) for(auto item: edges[j]) if(i == j && item.first == p[i]) custo += item.second;
+    }
+
+    cout << "Com custo " << custo << endl;
 }
 
 int main()
