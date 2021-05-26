@@ -35,28 +35,29 @@
     </br>
     
 Para compilar cada algoritmo, acesse sua determinada pasta e insira:
+
 ```
 make all
 ```
 
 <div align="justify">
-	<h1> Arquivo dos grafos: </h1>
+	<h1> Arquivo de entrada do grafo: </h1>
 </div>
 
-O arquivo contendo as informações de um grafo está organizado da seguinte forma:
+O arquivo de entrada contendo as informações de um grafo está organizado da seguinte forma:
 
 ```
 n m
-v1 v2 p1             // Aresta v1-v2 com peso p1
-.
-.
-.
-vn v4 p2            // Aresta vn-v4 com peso p2
+u v p             // Aresta u -> v, com peso p
+[...]
+.                 // Aresta m
 
 ```
+
 <div>
     <b><small><p>Leve em consideração que os algoritmos foram organizados para lerem grafos de <i>origem (0)</i> até o <i>destino (n-1)</i></p></small></b>
-    <b><small><p>Em cada pasta de cada algoritmo há um arquivo contém um grafo como exemplo.</p></small></b>
+    <b><small><p>Em cada pasta de cada algoritmo há um arquivo contendo um grafo como exemplo.</p></small></b>
+    <b><small><p>Dependendo do algoritmo a não direcionalidade do grafo é utilizada.</p></small></b>
 </div>
 
 
@@ -64,7 +65,7 @@ vn v4 p2            // Aresta vn-v4 com peso p2
 	<h1> Execução: </h1>
 </div>
 
-Após a compilação de cada algoritmo, é gerado o arquivo executavel do determinado algoritmo, para executar insira no determinado diretório do algoritmo:
+Após a compilação de cada algoritmo, é gerado o arquivo executável do determinado algoritmo, para executar insira no determinado diretório do algoritmo:
 
 
 Dijkstra:
