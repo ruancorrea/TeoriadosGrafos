@@ -49,8 +49,8 @@ void kruskal(Grafo *grafo, int origem){
         //cout << "\n";
         n++;
     }
-    free(p);
     cout << "Custo mínimo da árvore: " << wt << endl; 
+    free(p);
 }
 
 int main()

@@ -46,7 +46,7 @@ void fordFulkerson(int **grafo, int tam, int origem, int destino){
         max += path;
         cout << "Aresta mínima removida -> " << path << endl;
     }
-    cout << "Resultado encontrado -> " << max << endl;
+    cout << "Resultado encontrado: " << max << endl;
 }
  
 int main(){

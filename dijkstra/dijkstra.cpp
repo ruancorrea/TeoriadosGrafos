@@ -36,7 +36,6 @@ void dijkstra(vector<Edge> *edges, int n, int origem){
         for(int j=origem; j<n-1;j++) for(auto item: edges[j]) if(j == p[i] && item.first == i) custo += item.second;
     }
     cout << origem << "\nCom custo: " << custo << endl;
-    free(edges);
 }
 
 int main()
@@ -53,5 +52,6 @@ int main()
     }
     cout << "Utilizando o algoritmo de Dijkstra\n\n";
     dijkstra(edges,n, 0);
+    free(edges);
 	return 0;
 }
